@@ -1,0 +1,74 @@
+
+
+Slides 1 and 2
+
+SELECT T.Name,T.Milliseconds,A.Title,T.GenreId
+FROM Track T
+JOIN Album A
+ON A.AlbumId=T.AlbumId WHERE T.Milliseconds > (SELECT avg(Milliseconds) FROM Track)
+GROUP BY T.GenreId
+ORDER BY T.Milliseconds
+
+
+
+
+
+Which employees made more than average sales?
+Slide 4
+SELECT I.Total,E.FirstName,E.LastName
+FROM Invoice I
+Join Customer c
+ON C.CustomerId=I.CustomerId
+JOIN Employee E
+ON C.SupportRepId=E.EmployeeId
+WHERE (I.Total>(SELECT avg(Total) FROM Invoice))
+GROUP BY E.FirstName,E.LastName
+ORDER BY I.total DESC
+LIMIT 20
+
+
+Which artist has the most albums?
+Slide 3
+
+SELECT R.Name,COUNT(A.Title)
+FROM Artist R
+JOIN Album A
+ON R.ArtistId=A.ArtistId
+GROUP BY R.Name
+ORDER BY count(A.Title) DESC
+LIMIT 10
+
+
+Which customer from the USA purchased the most?
+Slide 5
+
+
+SELECT C.State,I.Total,C.FirstName,C.State,C.LastName,C.Company 
+FROM Customer C
+JOIN Invoice I
+ON C.CustomerId=I.CustomerId
+WHERE I.Total>(SELECT min(Total) FROM
+Invoice) AND (C.Country='USA')
+ORDER BY 2 DESC 
+LIMIT 5
+
+
+
+WHICH COUNTRIES MADE THE MOST SALES IN ROCK MUSIC
+Slide 6
+
+
+SELECT C.Country,I.total,G.Name
+FROM Customer C
+JOIN Invoice I
+ON C.CustomerId=I.CustomerId
+
+JOIN InvoiceLine L
+ON I.InvoiceId=L.InvoiceId
+JOIN Track T
+ON L.TrackId=T.TrackId
+JOIN Genre G
+ON T.GenreId=G.GenreId
+WHERE (I.Total>(SELECT avg(Total) FROM Invoice) AND G.Name='Rock')ORDER BY 2 DESC
+LIMIT 10
+
