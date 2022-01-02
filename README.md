@@ -23,10 +23,22 @@ This project is using chinook_db to answer these question using SQL queries
 * Which employees made more than average sales?
 * Which artist has the most albums?
 * Which customer from the USA purchased the most?
-* WHICH COUNTRIES MADE THE MOST SALES IN ROCK MUSIC?
+* Which countries made the most sales in rock music?
+
 
 Insights are made exporting cvs files to google sheets and presented in Music database.pdf
 
 ## Data Dashboard Project
 
 Reveal insights from a data set-Flight Delays and Cancellations-using Tableau Public
+
+Three insights
+* [Number of Departure delays by state](https://public.tableau.com/app/profile/ivana6104/viz/NumberofDepartureDelaysbystate/Sheet1)
+* [Number of Weather delays in different Airports(filtered by state)](https://public.tableau.com/app/profile/ivana6104/viz/NumberofWeatherDelaysindifferentAirportsDashboard/Dashboard3)
+* [Number of Airline Delays in different states](https://public.tableau.com/app/profile/ivana6104/viz/NumberofAirlineDelaysbystatefilteredbyAirportNamesDashboard/Dashboard2)
+
+
+
+
+
+
